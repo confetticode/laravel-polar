@@ -1,11 +1,11 @@
 <?php
 
-namespace Danestves\LaravelPolar\Database\Factories;
+namespace ConfettiCode\LaravelPolar\Database\Factories;
 
 use Carbon\CarbonInterface;
-use Danestves\LaravelPolar\Customer;
-use Danestves\LaravelPolar\Enums\SubscriptionStatus;
-use Danestves\LaravelPolar\Subscription;
+use ConfettiCode\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Enums\SubscriptionStatus;
+use ConfettiCode\LaravelPolar\Subscription;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /** @extends Factory<Subscription> */

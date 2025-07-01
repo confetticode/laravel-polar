@@ -1,6 +1,6 @@
 <?php
 
-use Danestves\LaravelPolar\Subscription;
+use ConfettiCode\LaravelPolar\Subscription;
 
 it('can determine if the subscription is valid while on its grace period', function () {
     $subscription = Subscription::factory()->cancelled()->create([

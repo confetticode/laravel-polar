@@ -1,12 +1,12 @@
 <?php
 
-namespace Danestves\LaravelPolar\Concerns;
+namespace ConfettiCode\LaravelPolar\Concerns;
 
-use Danestves\LaravelPolar\Customer;
-use Danestves\LaravelPolar\Data\Sessions\CustomerSessionCustomerIDCreateData;
-use Danestves\LaravelPolar\Exceptions\InvalidCustomer;
-use Danestves\LaravelPolar\Exceptions\PolarApiError;
-use Danestves\LaravelPolar\LaravelPolar;
+use ConfettiCode\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Data\Sessions\CustomerSessionCustomerIDCreateData;
+use ConfettiCode\LaravelPolar\Exceptions\InvalidCustomer;
+use ConfettiCode\LaravelPolar\Exceptions\PolarApiError;
+use ConfettiCode\LaravelPolar\LaravelPolar;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Http\RedirectResponse;
 

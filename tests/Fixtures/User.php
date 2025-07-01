@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Tests\Fixtures;
+namespace ConfettiCode\LaravelPolar\Tests\Fixtures;
 
-use Danestves\LaravelPolar\Billable;
+use ConfettiCode\LaravelPolar\Billable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Tests\Fixtures\Factories\UserFactory;

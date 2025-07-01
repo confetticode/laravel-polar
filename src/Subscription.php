@@ -1,12 +1,12 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Data\Subscriptions\SubscriptionCancelData;
-use Danestves\LaravelPolar\Data\Subscriptions\SubscriptionUpdateProductData;
-use Danestves\LaravelPolar\Enums\ProrationBehavior;
-use Danestves\LaravelPolar\Enums\SubscriptionStatus;
-use Danestves\LaravelPolar\Exceptions\PolarApiError;
+use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionCancelData;
+use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionUpdateProductData;
+use ConfettiCode\LaravelPolar\Enums\ProrationBehavior;
+use ConfettiCode\LaravelPolar\Enums\SubscriptionStatus;
+use ConfettiCode\LaravelPolar\Exceptions\PolarApiError;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -26,13 +26,13 @@ use Illuminate\Support\Carbon;
  * @property \Carbon\CarbonInterface|null $ends_at
  * @property \Carbon\CarbonInterface|null $created_at
  * @property \Carbon\CarbonInterface|null $updated_at
- * @property \Danestves\LaravelPolar\Billable $billable
+ * @property \ConfettiCode\LaravelPolar\Billable $billable
  *
  * @mixin \Eloquent
  */
 class Subscription extends Model // @phpstan-ignore-line propertyTag.trait - Billable is used in the user final code
 {
-    /** @use HasFactory<\Danestves\LaravelPolar\Database\Factories\SubscriptionFactory> */
+    /** @use HasFactory<\ConfettiCode\LaravelPolar\Database\Factories\SubscriptionFactory> */
     use HasFactory;
 
     /**

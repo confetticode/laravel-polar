@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Enums\OrderStatus;
+use ConfettiCode\LaravelPolar\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -26,13 +26,13 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property \Carbon\CarbonInterface $ordered_at
  * @property \Carbon\CarbonInterface|null $created_at
  * @property \Carbon\CarbonInterface|null $updated_at
- * @property \Danestves\LaravelPolar\Billable $billable
+ * @property \ConfettiCode\LaravelPolar\Billable $billable
  *
  * @mixin \Eloquent
  */
 class Order extends Model // @phpstan-ignore-line propertyTag.trait - Billable is used in the user final code
 {
-    /** @use HasFactory<\Danestves\LaravelPolar\Database\Factories\OrderFactory> */
+    /** @use HasFactory<\ConfettiCode\LaravelPolar\Database\Factories\OrderFactory> */
     use HasFactory;
 
     /**

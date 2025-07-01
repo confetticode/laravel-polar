@@ -1,10 +1,10 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Data\Checkout\CreateCheckoutSessionData;
-use Danestves\LaravelPolar\Data\Customers\CustomerBillingAddressData;
-use Danestves\LaravelPolar\Exceptions\PolarApiError;
+use ConfettiCode\LaravelPolar\Data\Checkout\CreateCheckoutSessionData;
+use ConfettiCode\LaravelPolar\Data\Customers\CustomerBillingAddressData;
+use ConfettiCode\LaravelPolar\Exceptions\PolarApiError;
 use DateTime;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\RedirectResponse;

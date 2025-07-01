@@ -1,18 +1,18 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Data\Checkout\CheckoutSessionData;
-use Danestves\LaravelPolar\Data\Checkout\CreateCheckoutSessionData;
-use Danestves\LaravelPolar\Data\Products\ListProductsData;
-use Danestves\LaravelPolar\Data\Products\ListProductsRequestData;
-use Danestves\LaravelPolar\Data\Sessions\CustomerSessionCustomerExternalIDCreateData;
-use Danestves\LaravelPolar\Data\Sessions\CustomerSessionCustomerIDCreateData;
-use Danestves\LaravelPolar\Data\Sessions\CustomerSessionData;
-use Danestves\LaravelPolar\Data\Subscriptions\SubscriptionCancelData;
-use Danestves\LaravelPolar\Data\Subscriptions\SubscriptionData;
-use Danestves\LaravelPolar\Data\Subscriptions\SubscriptionUpdateProductData;
-use Danestves\LaravelPolar\Exceptions\PolarApiError;
+use ConfettiCode\LaravelPolar\Data\Checkout\CheckoutSessionData;
+use ConfettiCode\LaravelPolar\Data\Checkout\CreateCheckoutSessionData;
+use ConfettiCode\LaravelPolar\Data\Products\ListProductsData;
+use ConfettiCode\LaravelPolar\Data\Products\ListProductsRequestData;
+use ConfettiCode\LaravelPolar\Data\Sessions\CustomerSessionCustomerExternalIDCreateData;
+use ConfettiCode\LaravelPolar\Data\Sessions\CustomerSessionCustomerIDCreateData;
+use ConfettiCode\LaravelPolar\Data\Sessions\CustomerSessionData;
+use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionCancelData;
+use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionData;
+use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionUpdateProductData;
+use ConfettiCode\LaravelPolar\Exceptions\PolarApiError;
 use Exception;
 use Http;
 use Illuminate\Http\Client\Response;
@@ -121,7 +121,7 @@ class LaravelPolar
         $api = app()->environment('production') ? 'https://api.polar.sh' : 'https://sandbox-api.polar.sh';
 
         $response = Http::withToken($apiKey)
-                    ->withUserAgent('Danestves\LaravelPolar/' . static::VERSION)
+                    ->withUserAgent('ConfettiCode\LaravelPolar/' . static::VERSION)
                     ->accept('application/vnd.api+json')
                     ->contentType('application/vnd.api+json')
             ->$method("$api/$uri", $payload);

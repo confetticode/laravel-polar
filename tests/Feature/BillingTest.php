@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use Danestves\LaravelPolar\Checkout;
-use Danestves\LaravelPolar\Customer;
-use Danestves\LaravelPolar\Tests\Fixtures\User;
+use ConfettiCode\LaravelPolar\Checkout;
+use ConfettiCode\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Tests\Fixtures\User;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Mockery;
 

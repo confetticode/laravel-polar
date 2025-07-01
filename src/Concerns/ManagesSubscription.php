@@ -1,9 +1,9 @@
 <?php
 
-namespace Danestves\LaravelPolar\Concerns;
+namespace ConfettiCode\LaravelPolar\Concerns;
 
-use Danestves\LaravelPolar\LaravelPolar;
-use Danestves\LaravelPolar\Subscription;
+use ConfettiCode\LaravelPolar\LaravelPolar;
+use ConfettiCode\LaravelPolar\Subscription;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait ManagesSubscription // @phpstan-ignore-line trait.unused - ManagesSubscription is used in Billable trait

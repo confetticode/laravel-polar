@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Benefits;
+namespace ConfettiCode\LaravelPolar\Data\Benefits;
 
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;

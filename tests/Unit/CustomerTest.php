@@ -1,6 +1,6 @@
 <?php
 
-use Danestves\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Customer;
 
 it('can determine if the customer is on a generic trial', function () {
     $customer = new Customer();

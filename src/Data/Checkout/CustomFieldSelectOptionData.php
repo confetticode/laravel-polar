@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Checkout;
+namespace ConfettiCode\LaravelPolar\Data\Checkout;
 
 use Spatie\LaravelData\Data;
 

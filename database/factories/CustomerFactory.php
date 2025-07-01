@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Database\Factories;
+namespace ConfettiCode\LaravelPolar\Database\Factories;
 
-use Danestves\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /** @extends Factory<Customer> */

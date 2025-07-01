@@ -1,9 +1,9 @@
 <?php
 
-namespace Danestves\LaravelPolar\Concerns;
+namespace ConfettiCode\LaravelPolar\Concerns;
 
-use Danestves\LaravelPolar\Checkout;
-use Danestves\LaravelPolar\Data\Customers\CustomerBillingAddressData;
+use ConfettiCode\LaravelPolar\Checkout;
+use ConfettiCode\LaravelPolar\Data\Customers\CustomerBillingAddressData;
 
 trait ManagesCheckouts // @phpstan-ignore-line trait.unused - ManagesCheckouts is used in Billable trait
 {

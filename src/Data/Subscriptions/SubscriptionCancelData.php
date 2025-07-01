@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Subscriptions;
+namespace ConfettiCode\LaravelPolar\Data\Subscriptions;
 
-use Danestves\LaravelPolar\Enums\CustomerCancellationReason;
+use ConfettiCode\LaravelPolar\Enums\CustomerCancellationReason;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 

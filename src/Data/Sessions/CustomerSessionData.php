@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Sessions;
+namespace ConfettiCode\LaravelPolar\Data\Sessions;
 
-use Danestves\LaravelPolar\Data\Customers\CustomerData;
+use ConfettiCode\LaravelPolar\Data\Customers\CustomerData;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 

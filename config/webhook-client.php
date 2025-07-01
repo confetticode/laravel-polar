@@ -25,7 +25,7 @@ return [
              *
              * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator
              */
-            'signature_validator' => Danestves\LaravelPolar\Handlers\PolarSignature::class,
+            'signature_validator' => ConfettiCode\LaravelPolar\Handlers\PolarSignature::class,
 
             /*
              * This class determines if the webhook call should be stored and processed.
@@ -58,7 +58,7 @@ return [
              *
              * This should be set to a class that extends \Spatie\WebhookClient\Jobs\ProcessWebhookJob.
              */
-            'process_webhook_job' => Danestves\LaravelPolar\Handlers\ProcessWebhook::class,
+            'process_webhook_job' => ConfettiCode\LaravelPolar\Handlers\ProcessWebhook::class,
         ],
     ],
 

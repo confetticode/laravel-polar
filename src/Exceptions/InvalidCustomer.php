@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar\Exceptions;
+namespace ConfettiCode\LaravelPolar\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;

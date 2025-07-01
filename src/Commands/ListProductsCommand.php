@@ -1,10 +1,10 @@
 <?php
 
-namespace Danestves\LaravelPolar\Commands;
+namespace ConfettiCode\LaravelPolar\Commands;
 
-use Danestves\LaravelPolar\Data\Products\ListProductsRequestData;
-use Danestves\LaravelPolar\Data\Products\ProductData;
-use Danestves\LaravelPolar\LaravelPolar;
+use ConfettiCode\LaravelPolar\Data\Products\ListProductsRequestData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductData;
+use ConfettiCode\LaravelPolar\LaravelPolar;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\Console\Attribute\AsCommand;

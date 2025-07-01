@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar\View\Components;
+namespace ConfettiCode\LaravelPolar\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;

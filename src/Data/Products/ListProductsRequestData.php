@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Products;
+namespace ConfettiCode\LaravelPolar\Data\Products;
 
-use Danestves\LaravelPolar\Enums\ListProductsSorting;
+use ConfettiCode\LaravelPolar\Enums\ListProductsSorting;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 

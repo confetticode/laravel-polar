@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,13 +14,13 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property \Carbon\CarbonInterface|null $created_at
  * @property \Carbon\CarbonInterface|null $updated_at
  * @property \Carbon\CarbonInterface|null $trial_ends_at
- * @property \Danestves\LaravelPolar\Billable $billable
+ * @property \ConfettiCode\LaravelPolar\Billable $billable
  *
  * @mixin \Eloquent
  */
 class Customer extends Model // @phpstan-ignore-line propertyTag.trait - Billable is used in the user final code
 {
-    /** @use HasFactory<\Danestves\LaravelPolar\Database\Factories\CustomerFactory> */
+    /** @use HasFactory<\ConfettiCode\LaravelPolar\Database\Factories\CustomerFactory> */
     use HasFactory;
 
     /**

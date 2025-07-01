@@ -1,6 +1,6 @@
 <?php
 
-use Danestves\LaravelPolar\Checkout;
+use ConfettiCode\LaravelPolar\Checkout;
 use Illuminate\Http\RedirectResponse;
 
 it('can initiate a new checkout', function () {

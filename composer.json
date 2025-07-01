@@ -1,5 +1,5 @@
 {
-    "name": "danestves/laravel-polar",
+    "name": "confetticode/laravel-polar",
     "description": "A package to easily integrate your Laravel application with Polar.sh",
     "keywords": [
         "laravel",
@@ -7,23 +7,16 @@
         "billing",
         "subscription"
     ],
-    "homepage": "https://github.com/danestves/laravel-polar",
+    "homepage": "https://github.com/confetticode/laravel-polar",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "danestves",
-            "email": "danestves@users.noreply.github.com",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": "^8.3",
+        "confetticode/standard-webhooks": "^0.1.0",
         "illuminate/contracts": "^10.0||^11.0||^12.0",
         "pinkary-project/type-guard": "0.1.0",
         "spatie/laravel-data": "^4.0",
         "spatie/laravel-package-tools": "^1",
-        "spatie/laravel-webhook-client": "^3.0",
-        "standard-webhooks/standard-webhooks": "dev-main"
+        "spatie/laravel-webhook-client": "^3.0"
     },
     "require-dev": {
         "larastan/larastan": "^2.9||^3.0",
@@ -41,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Danestves\\LaravelPolar\\": "src/",
-            "Danestves\\LaravelPolar\\Database\\Factories\\": "database/factories/"
+            "ConfettiCode\\LaravelPolar\\": "src/",
+            "ConfettiCode\\LaravelPolar\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Danestves\\LaravelPolar\\Tests\\": "tests/",
+            "ConfettiCode\\LaravelPolar\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
@@ -86,10 +79,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Danestves\\LaravelPolar\\LaravelPolarServiceProvider"
+                "ConfettiCode\\LaravelPolar\\LaravelPolarServiceProvider"
             ],
             "aliases": {
-                "LaravelPolar": "Danestves\\LaravelPolar\\Facades\\LaravelPolar"
+                "LaravelPolar": "ConfettiCode\\LaravelPolar\\Facades\\LaravelPolar"
             }
         }
     },

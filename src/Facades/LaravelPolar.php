@@ -1,16 +1,16 @@
 <?php
 
-namespace Danestves\LaravelPolar\Facades;
+namespace ConfettiCode\LaravelPolar\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Danestves\LaravelPolar\LaravelPolar
+ * @see \ConfettiCode\LaravelPolar\LaravelPolar
  */
 class LaravelPolar extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Danestves\LaravelPolar\LaravelPolar::class;
+        return \ConfettiCode\LaravelPolar\LaravelPolar::class;
     }
 }

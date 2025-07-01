@@ -1,6 +1,6 @@
 <?php
 
-namespace Danestves\LaravelPolar\Enums;
+namespace ConfettiCode\LaravelPolar\Enums;
 
 enum SubscriptionStatus: string
 {

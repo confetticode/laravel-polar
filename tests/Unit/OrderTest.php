@@ -1,7 +1,7 @@
 <?php
 
-use Danestves\LaravelPolar\Enums\OrderStatus;
-use Danestves\LaravelPolar\Order as PolarOrder;
+use ConfettiCode\LaravelPolar\Enums\OrderStatus;
+use ConfettiCode\LaravelPolar\Order as PolarOrder;
 
 it('can determine if the order is paid', function () {
     $order = new Order(['status' => OrderStatus::Paid]);

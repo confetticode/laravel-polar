@@ -1,23 +1,23 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Subscriptions;
+namespace ConfettiCode\LaravelPolar\Data\Subscriptions;
 
-use Danestves\LaravelPolar\Data\Customers\CustomerData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountFixedOnceForeverDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountFixedRepeatDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageOnceForeverDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageRepeatDurationData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceCustomData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceFixedData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceFreeData;
-use Danestves\LaravelPolar\Data\Products\ProductData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceCustomData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceFixedData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceFreeData;
-use Danestves\LaravelPolar\Data\Users\UserData;
-use Danestves\LaravelPolar\Enums\CustomerCancellationReason;
-use Danestves\LaravelPolar\Enums\RecurringInterval;
-use Danestves\LaravelPolar\Enums\SubscriptionStatus;
+use ConfettiCode\LaravelPolar\Data\Customers\CustomerData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountFixedOnceForeverDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountFixedRepeatDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageOnceForeverDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageRepeatDurationData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceCustomData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceFixedData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceFreeData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceCustomData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceFixedData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceFreeData;
+use ConfettiCode\LaravelPolar\Data\Users\UserData;
+use ConfettiCode\LaravelPolar\Enums\CustomerCancellationReason;
+use ConfettiCode\LaravelPolar\Enums\RecurringInterval;
+use ConfettiCode\LaravelPolar\Enums\SubscriptionStatus;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 

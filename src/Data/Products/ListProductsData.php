@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Products;
+namespace ConfettiCode\LaravelPolar\Data\Products;
 
-use Danestves\LaravelPolar\Data\Common\PaginationData;
+use ConfettiCode\LaravelPolar\Data\Common\PaginationData;
 use Spatie\LaravelData\Data;
 
 class ListProductsData extends Data

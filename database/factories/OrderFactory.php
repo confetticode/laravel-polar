@@ -1,10 +1,10 @@
 <?php
 
-namespace Danestves\LaravelPolar\Database\Factories;
+namespace ConfettiCode\LaravelPolar\Database\Factories;
 
-use Danestves\LaravelPolar\Customer;
-use Danestves\LaravelPolar\Enums\OrderStatus;
-use Danestves\LaravelPolar\Order;
+use ConfettiCode\LaravelPolar\Customer;
+use ConfettiCode\LaravelPolar\Enums\OrderStatus;
+use ConfettiCode\LaravelPolar\Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /** @extends Factory<Order> */

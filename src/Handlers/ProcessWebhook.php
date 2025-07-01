@@ -1,25 +1,25 @@
 <?php
 
-namespace Danestves\LaravelPolar\Handlers;
+namespace ConfettiCode\LaravelPolar\Handlers;
 
 use Carbon\Carbon;
-use Danestves\LaravelPolar\Enums\OrderStatus;
-use Danestves\LaravelPolar\Events\BenefitGrantCreated;
-use Danestves\LaravelPolar\Events\BenefitGrantRevoked;
-use Danestves\LaravelPolar\Events\BenefitGrantUpdated;
-use Danestves\LaravelPolar\Events\OrderCreated;
-use Danestves\LaravelPolar\Events\OrderUpdated;
-use Danestves\LaravelPolar\Events\SubscriptionActive;
-use Danestves\LaravelPolar\Events\SubscriptionCanceled;
-use Danestves\LaravelPolar\Events\SubscriptionCreated;
-use Danestves\LaravelPolar\Events\SubscriptionRevoked;
-use Danestves\LaravelPolar\Events\SubscriptionUpdated;
-use Danestves\LaravelPolar\Events\WebhookHandled;
-use Danestves\LaravelPolar\Events\WebhookReceived;
-use Danestves\LaravelPolar\Exceptions\InvalidMetadataPayload;
-use Danestves\LaravelPolar\LaravelPolar;
-use Danestves\LaravelPolar\Order;
-use Danestves\LaravelPolar\Subscription;
+use ConfettiCode\LaravelPolar\Enums\OrderStatus;
+use ConfettiCode\LaravelPolar\Events\BenefitGrantCreated;
+use ConfettiCode\LaravelPolar\Events\BenefitGrantRevoked;
+use ConfettiCode\LaravelPolar\Events\BenefitGrantUpdated;
+use ConfettiCode\LaravelPolar\Events\OrderCreated;
+use ConfettiCode\LaravelPolar\Events\OrderUpdated;
+use ConfettiCode\LaravelPolar\Events\SubscriptionActive;
+use ConfettiCode\LaravelPolar\Events\SubscriptionCanceled;
+use ConfettiCode\LaravelPolar\Events\SubscriptionCreated;
+use ConfettiCode\LaravelPolar\Events\SubscriptionRevoked;
+use ConfettiCode\LaravelPolar\Events\SubscriptionUpdated;
+use ConfettiCode\LaravelPolar\Events\WebhookHandled;
+use ConfettiCode\LaravelPolar\Events\WebhookReceived;
+use ConfettiCode\LaravelPolar\Exceptions\InvalidMetadataPayload;
+use ConfettiCode\LaravelPolar\LaravelPolar;
+use ConfettiCode\LaravelPolar\Order;
+use ConfettiCode\LaravelPolar\Subscription;
 use Illuminate\Support\Facades\Log;
 use Spatie\WebhookClient\Jobs\ProcessWebhookJob;
 
@@ -235,7 +235,7 @@ class ProcessWebhook extends ProcessWebhookJob
      * Resolve the billable from the payload.
      *
      * @param  array<string, mixed>  $payload
-     * @return \Danestves\LaravelPolar\Billable
+     * @return \ConfettiCode\LaravelPolar\Billable
      *
      * @throws InvalidMetadataPayload
      */
@@ -257,7 +257,7 @@ class ProcessWebhook extends ProcessWebhookJob
     /**
      * Find or create a customer.
      *
-     * @return \Danestves\LaravelPolar\Billable
+     * @return \ConfettiCode\LaravelPolar\Billable
      */
     private function findOrCreateCustomer(int|string $billableId, string $billableType, string $customerId) // @phpstan-ignore-line return.trait - Billable is used in the user final code
     {

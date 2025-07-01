@@ -1,19 +1,19 @@
 <?php
 
-namespace Danestves\LaravelPolar\Data\Checkout;
+namespace ConfettiCode\LaravelPolar\Data\Checkout;
 
-use Danestves\LaravelPolar\Data\Customers\CustomerBillingAddressData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountFixedOnceForeverDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountFixedRepeatDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageOnceForeverDurationData;
-use Danestves\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageRepeatDurationData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceCustomData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceFixedData;
-use Danestves\LaravelPolar\Data\Products\LegacyRecurringProductPriceFreeData;
-use Danestves\LaravelPolar\Data\Products\ProductData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceCustomData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceFixedData;
-use Danestves\LaravelPolar\Data\Products\ProductPriceFreeData;
+use ConfettiCode\LaravelPolar\Data\Customers\CustomerBillingAddressData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountFixedOnceForeverDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountFixedRepeatDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageOnceForeverDurationData;
+use ConfettiCode\LaravelPolar\Data\Discounts\CheckoutDiscountPercentageRepeatDurationData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceCustomData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceFixedData;
+use ConfettiCode\LaravelPolar\Data\Products\LegacyRecurringProductPriceFreeData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceCustomData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceFixedData;
+use ConfettiCode\LaravelPolar\Data\Products\ProductPriceFreeData;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 

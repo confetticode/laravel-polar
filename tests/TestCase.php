@@ -1,8 +1,8 @@
 <?php
 
-namespace Danestves\LaravelPolar\Tests;
+namespace ConfettiCode\LaravelPolar\Tests;
 
-use Danestves\LaravelPolar\LaravelPolarServiceProvider;
+use ConfettiCode\LaravelPolar\LaravelPolarServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -18,7 +18,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'Danestves\\LaravelPolar\\Database\\Factories\\' . class_basename($modelName) . 'Factory',
+            fn(string $modelName) => 'ConfettiCode\\LaravelPolar\\Database\\Factories\\' . class_basename($modelName) . 'Factory',
         );
     }
 

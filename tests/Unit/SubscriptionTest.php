@@ -1,7 +1,7 @@
 <?php
 
-use Danestves\LaravelPolar\Enums\SubscriptionStatus;
-use Danestves\LaravelPolar\Subscription;
+use ConfettiCode\LaravelPolar\Enums\SubscriptionStatus;
+use ConfettiCode\LaravelPolar\Subscription;
 
 it('can determine if the subscription is on trial', function () {
     $subscription = new Subscription(['status' => SubscriptionStatus::Trialing]);

@@ -1,11 +1,11 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Concerns\ManagesCheckouts;
-use Danestves\LaravelPolar\Concerns\ManagesCustomer;
-use Danestves\LaravelPolar\Concerns\ManagesOrders;
-use Danestves\LaravelPolar\Concerns\ManagesSubscription;
+use ConfettiCode\LaravelPolar\Concerns\ManagesCheckouts;
+use ConfettiCode\LaravelPolar\Concerns\ManagesCustomer;
+use ConfettiCode\LaravelPolar\Concerns\ManagesOrders;
+use ConfettiCode\LaravelPolar\Concerns\ManagesSubscription;
 
 trait Billable // @phpstan-ignore-line trait.unused - Billable is used in the user final code
 {

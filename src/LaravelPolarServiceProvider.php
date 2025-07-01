@@ -1,9 +1,9 @@
 <?php
 
-namespace Danestves\LaravelPolar;
+namespace ConfettiCode\LaravelPolar;
 
-use Danestves\LaravelPolar\Commands\ListProductsCommand;
-use Danestves\LaravelPolar\View\Components\Button;
+use ConfettiCode\LaravelPolar\Commands\ListProductsCommand;
+use ConfettiCode\LaravelPolar\View\Components\Button;
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;

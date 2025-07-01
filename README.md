@@ -19,7 +19,7 @@ Seamlessly integrate Polar.sh subscriptions and payments into your Laravel appli
 **Step 1:** You can install the package via composer:
 
 ```bash
-composer require danestves/laravel-polar
+composer require confetticode/laravel-polar
 ```
 
 **Step 2:** Run `:install`:
@@ -164,7 +164,7 @@ Let’s make sure everything’s ready for your customers to checkout smoothly. 
 First, we’ll need to set up a model to handle billing—don’t worry, it’s super simple! In most cases, this will be your app’s User model. Just add the Billable trait to your model like this (you’ll import it from the package first, of course):
 
 ```php
-use Danestves\LaravelPolar\Billable;
+use ConfettiCode\LaravelPolar\Billable;
 
 class User extends Authenticatable
 {
@@ -651,16 +651,16 @@ Polar can send webhooks to your app, allowing you to react. By default, this pac
 
 #### Webhook Events
 
-- `Danestves\LaravelPolar\Events\BenefitGrantCreated`
-- `Danestves\LaravelPolar\Events\BenefitGrantUpdated`
-- `Danestves\LaravelPolar\Events\BenefitGrantRevoked`
-- `Danestves\LaravelPolar\Events\OrderCreated`
-- `Danestves\LaravelPolar\Events\OrderRefunded`
-- `Danestves\LaravelPolar\Events\SubscriptionActive`
-- `Danestves\LaravelPolar\Events\SubscriptionCanceled`
-- `Danestves\LaravelPolar\Events\SubscriptionCreated`
-- `Danestves\LaravelPolar\Events\SubscriptionRevoked`
-- `Danestves\LaravelPolar\Events\SubscriptionUpdated`
+- `ConfettiCode\LaravelPolar\Events\BenefitGrantCreated`
+- `ConfettiCode\LaravelPolar\Events\BenefitGrantUpdated`
+- `ConfettiCode\LaravelPolar\Events\BenefitGrantRevoked`
+- `ConfettiCode\LaravelPolar\Events\OrderCreated`
+- `ConfettiCode\LaravelPolar\Events\OrderRefunded`
+- `ConfettiCode\LaravelPolar\Events\SubscriptionActive`
+- `ConfettiCode\LaravelPolar\Events\SubscriptionCanceled`
+- `ConfettiCode\LaravelPolar\Events\SubscriptionCreated`
+- `ConfettiCode\LaravelPolar\Events\SubscriptionRevoked`
+- `ConfettiCode\LaravelPolar\Events\SubscriptionUpdated`
 
 Each of these events has a billable `$model` object and an event `$payload`. The subscription events also include the `$subscription` object. These can be accessed via the public properties.
 
@@ -671,7 +671,7 @@ If you wish to respond to these events, you must establish listeners for them.  
 
 namespace App\Listeners;
 
-use Danestves\LaravelPolar\Events\WebhookHandled;
+use ConfettiCode\LaravelPolar\Events\WebhookHandled;
 
 class PolarEventListener
 {
@@ -698,7 +698,7 @@ namespace App\Providers;
 
 use App\Listeners\PolarEventListener;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Danestves\LaravelPolar\Events\WebhookHandled;
+use ConfettiCode\LaravelPolar\Events\WebhookHandled;
 
 class EventServiceProvider extends ServiceProvider
 {
