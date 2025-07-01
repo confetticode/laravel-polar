@@ -100,6 +100,8 @@ class ProcessWebhook extends ProcessWebhookJob
             ...$payload,
             'status' => $status,
             'refunded_at' => $isRefunded ? Carbon::make($payload['refunded_at']) : null,
+            // Because the sync method require $attributes to have "ordered_at".
+            'ordered_at' => Carbon::make($payload['created_at']),
         ]);
 
         OrderUpdated::dispatch($billable, $order, $payload, $isRefunded); // @phpstan-ignore-line argument.type - Billable is a instance of a model
