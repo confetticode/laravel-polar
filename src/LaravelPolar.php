@@ -14,12 +14,12 @@ use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionData;
 use ConfettiCode\LaravelPolar\Data\Subscriptions\SubscriptionUpdateProductData;
 use ConfettiCode\LaravelPolar\Exceptions\PolarApiError;
 use Exception;
-use Http;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Http;
 
 class LaravelPolar
 {
-    public const string VERSION = '0.3.2';
+    public const string VERSION = '1.x-dev';
 
     /**
      * The customer model class name.
@@ -108,9 +108,9 @@ class LaravelPolar
      * @throws Exception
      * @throws PolarApiError
      */
-    public static function api(string $method, string $uri, array $payload = []): Response
+    public static function api(string $method, string $endpoint, array $payload = []): Response
     {
-        if (empty($apiKey = config('polar.access_token'))) {
+        if (empty($token = config('polar.access_token'))) {
             throw new Exception('Polar API key not set.');
         }
 
@@ -118,13 +118,13 @@ class LaravelPolar
             ->filter(fn($value) => $value !== null && $value !== '' && $value !== [])
             ->toArray();
 
-        $api = app()->environment('production') ? 'https://api.polar.sh' : 'https://sandbox-api.polar.sh';
+        $url = config('polar.url', 'https://api.polar.sh');
 
-        $response = Http::withToken($apiKey)
+        $response = Http::withToken($token)
                     ->withUserAgent('ConfettiCode\LaravelPolar/' . static::VERSION)
                     ->accept('application/vnd.api+json')
                     ->contentType('application/vnd.api+json')
-            ->$method("$api/$uri", $payload);
+            ->$method("$url/$endpoint", $payload);
 
         if ($response->failed()) {
             throw new PolarApiError(json_encode($response['detail']), 422);

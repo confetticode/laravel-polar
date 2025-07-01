@@ -3,6 +3,19 @@
 return [
     /*
     |--------------------------------------------------------------------------
+    | Polar API URL
+    |--------------------------------------------------------------------------
+    |
+    | This url is where we send HTTP requests to the Polar system. The default
+    | value should be the production one. For other environments, we can set
+    | however we want, such as 'https://sandbox-api.polar.sh'.
+    |
+    */
+
+    'url' => env('POLAR_URL', 'https://api.polar.sh'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Polar Access Token
     |--------------------------------------------------------------------------
     |

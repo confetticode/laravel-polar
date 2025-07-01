@@ -84,6 +84,9 @@
             "aliases": {
                 "LaravelPolar": "ConfettiCode\\LaravelPolar\\Facades\\LaravelPolar"
             }
+        },
+        "branch-alias": {
+            "dev-main": "1.x-dev"
         }
     },
     "minimum-stability": "dev",
