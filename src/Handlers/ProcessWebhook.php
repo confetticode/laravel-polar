@@ -114,11 +114,11 @@ class ProcessWebhook extends ProcessWebhookJob
      */
     private function handleSubscriptionCreated(array $payload): void
     {
-        $customerMetadata = $payload['customer']['metadata'];
+        $productMetadata = $payload['product']['metadata'];
         $billable = $this->resolveBillable($payload);
 
         $subscription = $billable->subscriptions()->create([ // @phpstan-ignore-line class.notFound - the property is found in the billable model
-            'type' => $customerMetadata['subscription_type'] ?? 'default',
+            'type' => $productMetadata['subscription_type'] ?? 'default',
             'polar_id' => $payload['id'],
             'status' => $payload['status'],
             'product_id' => $payload['product_id'],
