@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'url' => env('POLAR_URL', 'https://api.polar.sh'),
+    'api_url' => env('POLAR_API_URL', 'https://api.polar.sh'),
 
     /*
     |--------------------------------------------------------------------------

@@ -1,9 +1,14 @@
 # Release Notes for 1.x
 
+## Unreleased
+
+* Use `api_url` instead of `url` in polar.php file
+* Use `POLAR_API_URL` instead of `POLAR_URL` in polar.php file
+
 ## v0.1.2 - 2025-07-02
 
 * bug: Fix cancel, resume or swap an active subscription in [#3](https://github.com/confetticode/laravel-polar/pull/3)
-* feat: Use subscription_type in the production metadata in [#2](https://github.com/confetticode/laravel-polar/pull/2 )
+* feat: Use subscription_type in the production metadata in [#2](https://github.com/confetticode/laravel-polar/pull/2)
 * feat: Allow to set url via the config file in [#1](https://github.com/confetticode/laravel-polar/pull/1)
 
 ## v0.1.1 - 2025-07-01

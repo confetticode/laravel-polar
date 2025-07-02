@@ -64,7 +64,7 @@ Create a new webhook secret in the Polar Dashboard > Settings > Webhooks
 Then, set them in the .env file.
 
 ```bash
-POLAR_URL=https://api.polar.sh
+POLAR_API_URL=https://api.polar.sh
 POLAR_ACCESS_TOKEN="<your_access_token>"
 POLAR_WEBHOOK_SECRET="<your_webhook_secret>"
 ```

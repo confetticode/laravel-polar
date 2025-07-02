@@ -118,7 +118,7 @@ class LaravelPolar
             ->filter(fn($value) => $value !== null && $value !== '' && $value !== [])
             ->toArray();
 
-        $url = config('polar.url', 'https://api.polar.sh');
+        $url = config('polar.api_url', 'https://api.polar.sh');
 
         $response = Http::withToken($token)
                     ->withUserAgent('ConfettiCode\LaravelPolar/' . static::VERSION)
