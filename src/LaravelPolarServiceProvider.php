@@ -30,8 +30,7 @@ class LaravelPolarServiceProvider extends PackageServiceProvider
                     ->publishAssets()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->copyAndRegisterServiceProviderInApp()
-                    ->askToStarRepoOnGitHub('danestves/laravel-polar');
+                    ->copyAndRegisterServiceProviderInApp();
             });
     }
 
