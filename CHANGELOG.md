@@ -1,6 +1,6 @@
 # Release Notes for 1.x
 
-## Unreleased
+## v0.2.0 - 2025-07-02
 
 * Use `api_url` instead of `url` in polar.php file
 * Use `POLAR_API_URL` instead of `POLAR_URL` in polar.php file
