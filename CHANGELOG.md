@@ -1,6 +1,6 @@
 # Release Notes for 1.x
 
-## Unreleased
+## v0.1.2 - 2025-07-02
 
 * bug: Fix cancel, resume or swap an active subscription in [#3](https://github.com/confetticode/laravel-polar/pull/3)
 * feat: Use subscription_type in the production metadata in [#2](https://github.com/confetticode/laravel-polar/pull/2 )
