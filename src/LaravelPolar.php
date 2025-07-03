@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Http;
 
 class LaravelPolar
 {
-    public const string VERSION = '1.x-dev';
+    public const string VERSION = '0.2.1';
 
     /**
      * The customer model class name.
