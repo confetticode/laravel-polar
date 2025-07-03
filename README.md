@@ -40,7 +40,7 @@ php artisan vendor:publish --tag="polar-views"
 php artisan migrate
 ```
 
-**Step 3:** Set polar API URL, access token and secret
+**Step 3:** Set polar api url, access token and webhook secret
 
 Create a new token in the Polar Dashboard > Settings > Developers
 
@@ -68,7 +68,7 @@ POLAR_API_URL=https://api.polar.sh
 POLAR_ACCESS_TOKEN="<your_access_token>"
 POLAR_WEBHOOK_SECRET="<your_webhook_secret>"
 ```
-> For sandbox, use https://sandbox.plor.sh and https://sandbox-api.polar.sh
+> For sandbox, use https://sandbox.polar.sh and https://sandbox-api.polar.sh
 
 ## Usage
 
