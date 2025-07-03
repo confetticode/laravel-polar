@@ -1,6 +1,6 @@
 # Release Notes for 1.x
 
-## Unreleased
+## v0.2.1 - 2025-07-03
 
 * bug: Fix the mapping name for `$userId` property in `SubscriptionData`
 
@@ -17,7 +17,7 @@
 
 ## v0.1.1 - 2025-07-01
 
-* Fix webhook handleOrderUpdated ([572f817](https://github.com/confetticode/standard-webhooks/commit/572f817f7455649c7a8d2ef5079e97d5fcbc80fb))
+* Fix webhook handleOrderUpdated
 
 ## v0.1.0 - 2025-07-01
 
