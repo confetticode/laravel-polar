@@ -122,6 +122,7 @@ class SubscriptionData extends Data
         public readonly array $metadata,
         public readonly CustomerData $customer,
         /** @deprecated */
+        #[MapName('user_id')]
         public readonly string $userId,
         public readonly UserData $user,
         /**

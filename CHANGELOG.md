@@ -1,5 +1,9 @@
 # Release Notes for 1.x
 
+## Unreleased
+
+* bug: Fix the mapping name for `$userId` property in `SubscriptionData`
+
 ## v0.2.0 - 2025-07-02
 
 * Use `api_url` instead of `url` in polar.php file
