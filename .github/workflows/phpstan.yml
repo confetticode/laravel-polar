@@ -28,4 +28,4 @@ jobs:
         run: composer global require phpstan/phpstan
 
       - name: Run PHPStan
-        run: ./vendor/bin/phpstan --error-format=github
+        run: composer exec phpstan --error-format=github
