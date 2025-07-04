@@ -48,6 +48,7 @@ Create a new token in the Polar Dashboard > Settings > Developers
 
 Create a new webhook secret in the Polar Dashboard > Settings > Webhooks
 
+- `customer.updated`
 - `order.created`
 - `order.updated`
 - `subscription.created`
@@ -235,8 +236,11 @@ At the end is just a normal link but ysin an special attribute for the script to
 You can override the user data using the following methods in your models provided by the `Billable` trait.
 
 ```php
-public function polarName(): ?string; // default: $model->name
-public function polarEmail(): ?string; // default: $model->email
+public function polarNameField(): string; // default: 'name'
+public function polarEmailField(): string; // default: 'email'
+
+public function polarName(): ?string; // default: $model->name (depends on polarNameField)
+public function polarEmail(): ?string; // default: $model->email (depends on polarEmailField)
 ```
 
 ### Redirects After Purchase

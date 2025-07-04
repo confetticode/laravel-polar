@@ -1,5 +1,9 @@
 # Release Notes for 1.x
 
+## Unreleased
+
+* feat: Handle the customer.updated event
+
 ## v0.2.1 - 2025-07-03
 
 * bug: Fix the mapping name for `$userId` property in `SubscriptionData`
