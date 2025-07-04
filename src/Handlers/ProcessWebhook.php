@@ -7,6 +7,7 @@ use ConfettiCode\LaravelPolar\Enums\OrderStatus;
 use ConfettiCode\LaravelPolar\Events\BenefitGrantCreated;
 use ConfettiCode\LaravelPolar\Events\BenefitGrantRevoked;
 use ConfettiCode\LaravelPolar\Events\BenefitGrantUpdated;
+use ConfettiCode\LaravelPolar\Events\CustomerUpdated;
 use ConfettiCode\LaravelPolar\Events\OrderCreated;
 use ConfettiCode\LaravelPolar\Events\OrderUpdated;
 use ConfettiCode\LaravelPolar\Events\SubscriptionActive;
@@ -35,6 +36,7 @@ class ProcessWebhook extends ProcessWebhookJob
         WebhookReceived::dispatch($payload);
 
         match ($type) {
+            'customer.updated' => $this->handleCustomerUpdated($data),
             'order.created' => $this->handleOrderCreated($data),
             'order.updated' => $this->handleOrderUpdated($data),
             'subscription.created' => $this->handleSubscriptionCreated($data),
@@ -52,6 +54,27 @@ class ProcessWebhook extends ProcessWebhookJob
 
         // Acknowledge you received the response
         http_response_code(200);
+    }
+
+    /**
+     * Handle the customer.updated event.
+     *
+     * @param  array<string, mixed>  $payload
+     */
+    private function handleCustomerUpdated(array $payload): void
+    {
+        $billable = $this->findOrCreateCustomer(
+            $payload['metadata']['billable_id'],
+            $payload['metadata']['billable_type'],
+            $payload['id'],
+        );
+
+        $billable->update([
+            $billable->polarEmailField() => $payload['email'],
+            $billable->polarNameField() => $payload['name'],
+        ]);
+
+        CustomerUpdated::dispatch($billable, $payload);
     }
 
     /**

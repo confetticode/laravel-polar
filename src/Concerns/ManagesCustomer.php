@@ -33,11 +33,27 @@ trait ManagesCustomer // @phpstan-ignore-line trait.unused - ManagesCustomer is 
     }
 
     /**
+     * Define the billable field / property that represents name.
+     */
+    public function polarNameField(): string
+    {
+        return 'name';
+    }
+
+    /**
      * Get the billable's name to associate with Polar.
      */
     public function polarName(): ?string
     {
-        return $this->name ?? null;
+        return $this->{$this->polarNameField()} ?? null;
+    }
+
+    /**
+     * Define the billable field / property that represents email.
+     */
+    public function polarEmailField(): string
+    {
+        return 'email';
     }
 
     /**
@@ -45,7 +61,7 @@ trait ManagesCustomer // @phpstan-ignore-line trait.unused - ManagesCustomer is 
      */
     public function polarEmail(): ?string
     {
-        return $this->email ?? null;
+        return $this->{$this->polarEmailField()} ?? null;
     }
 
     /**
