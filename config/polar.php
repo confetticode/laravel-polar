@@ -77,4 +77,22 @@ return [
     |
     */
     'currency_locale' => env('POLAR_CURRENCY_LOCALE', 'en'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Webhook Handlers
+    |--------------------------------------------------------------------------
+    */
+
+    'hooks' => [
+        'customer.updated' => \ConfettiCode\LaravelPolar\Hooks\CustomerHandler::class,
+        'order.created' => \ConfettiCode\LaravelPolar\Hooks\OrderHandler::class,
+        'order.updated' => \ConfettiCode\LaravelPolar\Hooks\OrderHandler::class,
+        'subscription.created' => \ConfettiCode\LaravelPolar\Hooks\SubscriptionHandler::class,
+        'subscription.updated' => \ConfettiCode\LaravelPolar\Hooks\SubscriptionHandler::class,
+        'subscription.active' => \ConfettiCode\LaravelPolar\Hooks\SubscriptionHandler::class,
+        'subscription.canceled' => \ConfettiCode\LaravelPolar\Hooks\SubscriptionHandler::class,
+        'subscription.revoked' => \ConfettiCode\LaravelPolar\Hooks\SubscriptionHandler::class,
+    ],
+
 ];

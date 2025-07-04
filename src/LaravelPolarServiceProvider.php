@@ -34,6 +34,13 @@ class LaravelPolarServiceProvider extends PackageServiceProvider
             });
     }
 
+    public function register(): void
+    {
+        parent::register();
+
+        $this->app->singleton(Polar::class);
+    }
+
     public function boot(): void
     {
         parent::boot();
