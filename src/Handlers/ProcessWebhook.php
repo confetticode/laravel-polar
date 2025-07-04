@@ -69,9 +69,9 @@ class ProcessWebhook extends ProcessWebhookJob
             $payload['id'],
         );
 
-        $billable->update([
-            $billable->polarEmailField() => $payload['email'],
-            $billable->polarNameField() => $payload['name'],
+        $billable->update([ // @phpstan-ignore-line class.notFound
+            $billable->polarEmailField() => $payload['email'], // @phpstan-ignore-line class.notFound
+            $billable->polarNameField() => $payload['name'], // @phpstan-ignore-line class.notFound
         ]);
 
         CustomerUpdated::dispatch($billable, $payload);
@@ -100,7 +100,7 @@ class ProcessWebhook extends ProcessWebhookJob
             'ordered_at' => Carbon::make($payload['created_at']),
         ]);
 
-        OrderCreated::dispatch($billable, $order, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        OrderCreated::dispatch($billable, $order, $payload);
     }
 
     /**
@@ -127,7 +127,7 @@ class ProcessWebhook extends ProcessWebhookJob
             'ordered_at' => Carbon::make($payload['created_at']),
         ]);
 
-        OrderUpdated::dispatch($billable, $order, $payload, $isRefunded); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        OrderUpdated::dispatch($billable, $order, $payload, $isRefunded);
     }
 
     /**
@@ -153,7 +153,7 @@ class ProcessWebhook extends ProcessWebhookJob
             $billable->customer->update(['polar_id' => $payload['customer_id']]); // @phpstan-ignore-line property.notFound - the property is found in the billable model
         }
 
-        SubscriptionCreated::dispatch($billable, $subscription, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        SubscriptionCreated::dispatch($billable, $subscription, $payload);
     }
 
     /**
@@ -169,7 +169,7 @@ class ProcessWebhook extends ProcessWebhookJob
 
         $subscription->sync($payload);
 
-        SubscriptionUpdated::dispatch($subscription->billable, $subscription, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        SubscriptionUpdated::dispatch($subscription->billable, $subscription, $payload);
     }
 
     /**
@@ -185,7 +185,7 @@ class ProcessWebhook extends ProcessWebhookJob
 
         $subscription->sync($payload);
 
-        SubscriptionActive::dispatch($subscription->billable, $subscription, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        SubscriptionActive::dispatch($subscription->billable, $subscription, $payload);
     }
 
     /**
@@ -201,7 +201,7 @@ class ProcessWebhook extends ProcessWebhookJob
 
         $subscription->sync($payload);
 
-        SubscriptionCanceled::dispatch($subscription->billable, $subscription, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        SubscriptionCanceled::dispatch($subscription->billable, $subscription, $payload);
     }
 
     /**
@@ -217,7 +217,7 @@ class ProcessWebhook extends ProcessWebhookJob
 
         $subscription->sync($payload);
 
-        SubscriptionRevoked::dispatch($subscription->billable, $subscription, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        SubscriptionRevoked::dispatch($subscription->billable, $subscription, $payload);
     }
 
     /**
@@ -229,7 +229,7 @@ class ProcessWebhook extends ProcessWebhookJob
     {
         $billable = $this->resolveBillable($payload);
 
-        BenefitGrantCreated::dispatch($billable, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        BenefitGrantCreated::dispatch($billable, $payload);
     }
 
     /**
@@ -241,7 +241,7 @@ class ProcessWebhook extends ProcessWebhookJob
     {
         $billable = $this->resolveBillable($payload);
 
-        BenefitGrantUpdated::dispatch($billable, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        BenefitGrantUpdated::dispatch($billable, $payload);
     }
 
     /**
@@ -253,7 +253,7 @@ class ProcessWebhook extends ProcessWebhookJob
     {
         $billable = $this->resolveBillable($payload);
 
-        BenefitGrantRevoked::dispatch($billable, $payload); // @phpstan-ignore-line argument.type - Billable is a instance of a model
+        BenefitGrantRevoked::dispatch($billable, $payload);
     }
 
     /**
