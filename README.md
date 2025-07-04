@@ -11,8 +11,7 @@ This package is NOT an official Polar project. I first copied code from [danestv
 
 ## Requirements
 
-- PHP `8.3`, `8.4`
-- Laravel `12.x`
+Laravel `12.x`
 
 
 ## Installation
