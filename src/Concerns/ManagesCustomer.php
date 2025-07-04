@@ -33,7 +33,7 @@ trait ManagesCustomer // @phpstan-ignore-line trait.unused - ManagesCustomer is 
     }
 
     /**
-     * Define the billable field / property that represent name.
+     * Define the billable field / property that represents name.
      */
     public function polarNameField(): string
     {
@@ -49,7 +49,7 @@ trait ManagesCustomer // @phpstan-ignore-line trait.unused - ManagesCustomer is 
     }
 
     /**
-     * Define the billable field / property that represent email.
+     * Define the billable field / property that represents email.
      */
     public function polarEmailField(): string
     {
