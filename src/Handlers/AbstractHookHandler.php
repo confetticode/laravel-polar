@@ -4,7 +4,6 @@ namespace ConfettiCode\LaravelPolar\Handlers;
 
 use ConfettiCode\LaravelPolar\LaravelPolar;
 use ConfettiCode\LaravelPolar\Exceptions\InvalidMetadataPayload;
-use ConfettiCode\LaravelPolar\Hooks\HookHandler;
 
 abstract class AbstractHookHandler implements HookHandler
 {

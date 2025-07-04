@@ -1,6 +1,6 @@
 <?php
 
-namespace ConfettiCode\LaravelPolar\Hooks;
+namespace ConfettiCode\LaravelPolar\Handlers;
 
 interface HookHandler
 {
