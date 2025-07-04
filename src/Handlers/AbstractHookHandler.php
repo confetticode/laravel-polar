@@ -13,7 +13,7 @@ abstract class AbstractHookHandler implements HookHandler
      *
      * @return \ConfettiCode\LaravelPolar\Billable
      */
-    protected function findOrCreateCustomer(int|string $billableId, string $billableType, string $customerId)
+    protected function findOrCreateCustomer(int|string $billableId, string $billableType, string $customerId) // @phpstan-ignore-line return.trait - Billable is used in the user final code
     {
         return LaravelPolar::$customerModel::firstOrCreate([
             'billable_id' => $billableId,

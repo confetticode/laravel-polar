@@ -15,8 +15,8 @@ class Polar
 
     public function handleWebhookCall(WebhookCall $webhookCall)
     {
-        $type = $webhookCall->type;
         $payload = $webhookCall->payload;
+        $type = $payload['type'];
 
         $class = $this->config->get("polar.{$type}", null);
 
