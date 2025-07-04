@@ -1,7 +1,7 @@
 # Laravel Polar
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/confetticode/laravel-polar.svg?style=flat-square)](https://packagist.org/packages/confetticode/laravel-polar)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/confetticode/laravel-polar/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/confetticode/laravel-polar/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/confetticode/laravel-polar/test.yml?branch=main&label=test&style=flat-square)](https://github.com/confetticode/laravel-polar/actions?query=workflow%3Atest+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/confetticode/laravel-polar/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/confetticode/laravel-polar/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/confetticode/laravel-polar.svg?style=flat-square)](https://packagist.org/packages/confetticode/laravel-polar)
 
@@ -46,18 +46,6 @@ Create a new token in the Polar Dashboard > Settings > Developers
 > E.g. https://polar.sh/dashboard/org_slug/settings
 
 Create a new webhook secret in the Polar Dashboard > Settings > Webhooks
-
-- `customer.updated`
-- `order.created`
-- `order.updated`
-- `subscription.created`
-- `subscription.updated`
-- `subscription.active`
-- `subscription.canceled`
-- `subscription.revoked`
-- `benefit_grant.created`
-- `benefit_grant.updated`
-- `benefit_grant.revoked`
 
 > E.g. https://polar.sh/dashboard/org_slug/settings/Webhooks
 
@@ -107,15 +95,7 @@ This package includes a webhook handler that will handle the webhooks from Polar
 
 #### Webhooks & CSRF Protection
 
-Incoming webhooks should not be affected by [CSRF protection](https://laravel.com/docs/csrf). To prevent this, add your webhook path to the except list of your `App\Http\Middleware\VerifyCsrfToken` middleware:
-
-```php
-protected $except = [
-    'polar/*',
-];
-```
-
-Or if you're using Laravel v11 and up, you should exclude `polar/*` in your application's `bootstrap/app.php` file:
+Incoming webhooks should not be affected by [CSRF protection](https://laravel.com/docs/csrf). To prevent this, add your webhook path to the except list:
 
 ```php
 ->withMiddleware(function (Middleware $middleware) {
@@ -567,66 +547,58 @@ When a cancelled subscription approaches the end of its grace period, it becomes
 
 Polar can send webhooks to your app, allowing you to react. By default, this package handles the majority of the work for you. If you have properly configured webhooks, it will listen for incoming events and update your database accordingly. We recommend activating all event kinds so you may easily upgrade in the future.
 
-#### Webhook Events
+#### Supported Events
 
-- `ConfettiCode\LaravelPolar\Events\BenefitGrantCreated`
-- `ConfettiCode\LaravelPolar\Events\BenefitGrantUpdated`
-- `ConfettiCode\LaravelPolar\Events\BenefitGrantRevoked`
-- `ConfettiCode\LaravelPolar\Events\OrderCreated`
-- `ConfettiCode\LaravelPolar\Events\OrderRefunded`
-- `ConfettiCode\LaravelPolar\Events\SubscriptionActive`
-- `ConfettiCode\LaravelPolar\Events\SubscriptionCanceled`
-- `ConfettiCode\LaravelPolar\Events\SubscriptionCreated`
-- `ConfettiCode\LaravelPolar\Events\SubscriptionRevoked`
-- `ConfettiCode\LaravelPolar\Events\SubscriptionUpdated`
+Currently, we support a few events by default. They have their own handlers defined in the `config/polar.php` file.
 
-Each of these events has a billable `$model` object and an event `$payload`. The subscription events also include the `$subscription` object. These can be accessed via the public properties.
+- `customer.updated`
+- `order.created`
+- `order.updated`
+- `subscription.created`
+- `subscription.updated`
+- `subscription.active`
+- `subscription.canceled`
+- `subscription.revoked`
 
-If you wish to respond to these events, you must establish listeners for them.  For example, you may wish to react when a subscription is updated.
+You can modify however you want. Please be carefully before changing these default behavior or subscribed methods don't work as you expect.
+
+#### Additional Events
+
+E.g, if you want to handle more events like `checkout.created` and `checkout.updated`. First, you have to create a class like this.
 
 ```php
 <?php
 
-namespace App\Listeners;
+namespace App\Hooks;
 
-use ConfettiCode\LaravelPolar\Events\WebhookHandled;
+use ConfettiCode\LaravelPolar\Hooks\AbstractHookHandler;
 
-class PolarEventListener
+class CheckoutHandler extends AbstractHookHandler;
 {
-    /**
-     * Handle received Polar webhooks.
-     */
-    public function handle(WebhookHandled $event): void
+    public function handle(array $payload): void
     {
-        if ($event->payload['type'] === 'subscription.updated') {
-            // Handle the incoming event...
+        if ($payload['type'] === 'checkout.created') {
+            $this->handleCreated($payload['data']);
+        } elseif ($payload['type'] === 'checkout.updated') {
+            $this->handleUpdated($payload['data']);
         }
     }
 }
 ```
 
-The [Polar documentation](https://docs.polar.sh/integrate/webhooks/events) includes an example payload.
-
-Laravel v11 and up will automatically discover the listener. If you're using Laravel v10 or lower, you should configure it in your app's `EventServiceProvider`:
+Then, you have to define them the in `config/polar.php` file.
 
 ```php
-<?php
-
-namespace App\Providers;
-
-use App\Listeners\PolarEventListener;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use ConfettiCode\LaravelPolar\Events\WebhookHandled;
-
-class EventServiceProvider extends ServiceProvider
-{
-    protected $listen = [
-        WebhookHandled::class => [
-            PolarEventListener::class,
-        ],
-    ];
-}
+return [
+    'hooks' => [
+        // others
+        'checkout.created' => \App\Hooks\CheckoutHandler::class,
+        'checkout.updated' => \App\Hooks\CheckoutHandler::class,
+    ],
+];
 ```
+
+The [Polar documentation](https://docs.polar.sh/integrate/webhooks/events) includes an example payload.
 
 ## Roadmap
 
@@ -636,7 +608,7 @@ class EventServiceProvider extends ServiceProvider
 ## Testing
 
 ```bash
-composer test
+./vendor/bin/pest
 ```
 
 ## Changelog

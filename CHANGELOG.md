@@ -1,5 +1,9 @@
 # Release Notes for 1.x
 
+## Unreleased
+
+* Refactor webhook handlers (dropping events)
+
 ## v0.2.2 - 2025-07-04
 
 * feat: Handle the customer.updated event
