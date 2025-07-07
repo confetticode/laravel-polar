@@ -10,7 +10,6 @@
     "homepage": "https://github.com/confetticode/laravel-polar",
     "license": "MIT",
     "require": {
-        "php": "^8.2",
         "confetticode/standard-webhooks": "^0.1.0",
         "illuminate/contracts": "^12.0",
         "pinkary-project/type-guard": "0.1.0",
