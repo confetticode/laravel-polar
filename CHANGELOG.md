@@ -1,6 +1,6 @@
 # Release Notes for 1.x
 
-## Unreleased
+## v0.3.0 - 2025-07-07
 
 * Refactor webhook handlers (dropping events)
 
